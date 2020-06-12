@@ -17,12 +17,15 @@ float sphere::getRadius() const {
 }
 
 bool sphere::hit(const ray& ray, float t_min, float t_max, hit_record& rec) const {
+    // ecuación de segundo grado simplificada
     vec3 oc = ray.getOrigin() - center;
     float a = ray.getDirection().lengthSquared();
     float half_b = dot(oc, ray.getDirection());
     float c = oc.lengthSquared() - radius*radius;
     float discriminant = half_b*half_b - a*c;
 
+    // si el discriminante es mayor que 0 es que hay dos soluciones; nos quedamos
+    // con la solución más pequeña primero porque es el punto más cercano
     if (discriminant > 0) {
         float root = sqrt(discriminant);
         float temp = (-half_b - root)/a;

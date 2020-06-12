@@ -11,8 +11,6 @@
 
 #include "vec3.h"
 
-#include <iostream>
-
 void printColor(std::ostream& out, color pixel_color);
 
 #endif

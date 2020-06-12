@@ -16,6 +16,7 @@ vec3 ray::getDirection() const {
     return direction;
 }
 
+// P(t) = A + tb = origin + t*direction;
 point3 ray::currentPoint(float t) const {
     return origin + t * direction;
 }

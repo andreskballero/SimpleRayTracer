@@ -68,18 +68,21 @@ inline vec3 operator/ (vec3 v, float t) {
     return (1/t) * v;
 }
 
+// dot product
 inline float dot(const vec3& u, const vec3& v) {
     return u.getX() * v.getX()
          + u.getY() * v.getY()
          + u.getZ() * v.getZ();
 }
 
+// cross product
 inline vec3 cross(const vec3& u, const vec3& v) {
     return vec3(u.getY() * v.getZ() - u.getZ() * v.getY(),
                 u.getZ() * v.getX() - u.getX() * v.getZ(),
                 u.getX() * v.getY() - u.getY() * v.getX());
 }
 
+// transformar en unit vector
 inline vec3 unitVector(vec3 v) {
     return v / v.length();
 }

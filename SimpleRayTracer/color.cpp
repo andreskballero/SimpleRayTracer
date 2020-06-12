@@ -9,7 +9,7 @@
 #include "color.h"
 
 void printColor(std::ostream& out, color pixel_color) {
-    // Escribir el valor traducido [0, 255] de cada color
+    // escribir el valor traducido [0, 255] de cada color
     out << static_cast<int>(255.999 * pixel_color.getX()) << ' '
         << static_cast<int>(255.999 * pixel_color.getY()) << ' '
         << static_cast<int>(255.999 * pixel_color.getZ()) << '\n';

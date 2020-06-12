@@ -19,6 +19,7 @@ public:
     point3 getOrigin() const;
     vec3 getDirection() const;
 
+    // P(t) = A + tb; donde P es una posición 3D a lo largo de una línea 3D
     point3 currentPoint(float t) const;
 
 private:

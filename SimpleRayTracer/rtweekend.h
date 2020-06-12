@@ -15,25 +15,21 @@
 #include <memory>
 
 
-// Usings
-
+// usings
 using std::shared_ptr;
 using std::make_shared;
 using std::sqrt;
 
-// Constants
-
+// constantes
 const double infinity = std::numeric_limits<double>::infinity();
 const double pi = 3.1415926535897932385;
 
-// Utility Functions
-
+// funciones de utilidad
 inline double degrees_to_radians(double degrees) {
     return degrees * pi / 180;
 }
 
-// Common Headers
-
+// headers comunes
 #include "ray.h"
 #include "vec3.h"
 #include "color.h"
