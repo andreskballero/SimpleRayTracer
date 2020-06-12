@@ -13,6 +13,7 @@
 		0E24D85B24940C500024E347 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85A24940C500024E347 /* color.cpp */; };
 		0E24D85E24940CB00024E347 /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85D24940CB00024E347 /* sphere.cpp */; };
 		0E24D86224940D2E0024E347 /* hittable_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D86124940D2E0024E347 /* hittable_list.cpp */; };
+		0E2E9D26249438E30051268E /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E9D25249438E30051268E /* camera.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,8 @@
 		0E24D86024940D1D0024E347 /* hittable_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hittable_list.h; sourceTree = "<group>"; };
 		0E24D86124940D2E0024E347 /* hittable_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hittable_list.cpp; sourceTree = "<group>"; };
 		0E24D86324940D6E0024E347 /* rtweekend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rtweekend.h; sourceTree = "<group>"; };
+		0E2E9D24249437620051268E /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		0E2E9D25249438E30051268E /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				0E24D86024940D1D0024E347 /* hittable_list.h */,
 				0E24D85F24940CF20024E347 /* hittable.h */,
 				0E24D86324940D6E0024E347 /* rtweekend.h */,
+				0E2E9D25249438E30051268E /* camera.cpp */,
+				0E2E9D24249437620051268E /* camera.h */,
 			);
 			path = SimpleRayTracer;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2E9D26249438E30051268E /* camera.cpp in Sources */,
 				0E24D85824940C010024E347 /* ray.cpp in Sources */,
 				0E24D85B24940C500024E347 /* color.cpp in Sources */,
 				0E24D86224940D2E0024E347 /* hittable_list.cpp in Sources */,

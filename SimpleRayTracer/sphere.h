@@ -22,9 +22,9 @@ public:
     
     virtual bool hit(const ray& r, float t_min, float t_max, hit_record& rec) const;
 
-    public:
-        point3 center;
-        float radius;
+private:
+    point3 center;
+    float radius;
 };
 
 #endif
