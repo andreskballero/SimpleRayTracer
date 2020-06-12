@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0E24D84D24940AF80024E347 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D84C24940AF80024E347 /* main.cpp */; };
+		0E24D85524940B970024E347 /* vec3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85424940B970024E347 /* vec3.cpp */; };
+		0E24D85824940C010024E347 /* ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85724940C010024E347 /* ray.cpp */; };
+		0E24D85B24940C500024E347 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85A24940C500024E347 /* color.cpp */; };
+		0E24D85E24940CB00024E347 /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D85D24940CB00024E347 /* sphere.cpp */; };
+		0E24D86224940D2E0024E347 /* hittable_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E24D86124940D2E0024E347 /* hittable_list.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,18 @@
 /* Begin PBXFileReference section */
 		0E24D84924940AF80024E347 /* SimpleRayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleRayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E24D84C24940AF80024E347 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0E24D85324940B870024E347 /* vec3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
+		0E24D85424940B970024E347 /* vec3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vec3.cpp; sourceTree = "<group>"; };
+		0E24D85624940BF50024E347 /* ray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ray.h; sourceTree = "<group>"; };
+		0E24D85724940C010024E347 /* ray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ray.cpp; sourceTree = "<group>"; };
+		0E24D85924940C430024E347 /* color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		0E24D85A24940C500024E347 /* color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
+		0E24D85C24940CA00024E347 /* sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
+		0E24D85D24940CB00024E347 /* sphere.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
+		0E24D85F24940CF20024E347 /* hittable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hittable.h; sourceTree = "<group>"; };
+		0E24D86024940D1D0024E347 /* hittable_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hittable_list.h; sourceTree = "<group>"; };
+		0E24D86124940D2E0024E347 /* hittable_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hittable_list.cpp; sourceTree = "<group>"; };
+		0E24D86324940D6E0024E347 /* rtweekend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rtweekend.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,18 @@
 			isa = PBXGroup;
 			children = (
 				0E24D84C24940AF80024E347 /* main.cpp */,
+				0E24D85424940B970024E347 /* vec3.cpp */,
+				0E24D85324940B870024E347 /* vec3.h */,
+				0E24D85724940C010024E347 /* ray.cpp */,
+				0E24D85624940BF50024E347 /* ray.h */,
+				0E24D85D24940CB00024E347 /* sphere.cpp */,
+				0E24D85C24940CA00024E347 /* sphere.h */,
+				0E24D85A24940C500024E347 /* color.cpp */,
+				0E24D85924940C430024E347 /* color.h */,
+				0E24D86124940D2E0024E347 /* hittable_list.cpp */,
+				0E24D86024940D1D0024E347 /* hittable_list.h */,
+				0E24D85F24940CF20024E347 /* hittable.h */,
+				0E24D86324940D6E0024E347 /* rtweekend.h */,
 			);
 			path = SimpleRayTracer;
 			sourceTree = "<group>";
@@ -119,7 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E24D85824940C010024E347 /* ray.cpp in Sources */,
+				0E24D85B24940C500024E347 /* color.cpp in Sources */,
+				0E24D86224940D2E0024E347 /* hittable_list.cpp in Sources */,
+				0E24D85524940B970024E347 /* vec3.cpp in Sources */,
 				0E24D84D24940AF80024E347 /* main.cpp in Sources */,
+				0E24D85E24940CB00024E347 /* sphere.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
