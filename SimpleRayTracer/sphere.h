@@ -20,7 +20,7 @@ public:
     point3 getCenter() const;
     float getRadius() const;
     
-    virtual bool hit(const ray& r, float t_min, float t_max, hit_record& rec) const;
+    virtual bool hit(const ray& rayo, float t_min, float t_max, hit_record& rec) const;
 
 private:
     point3 center;

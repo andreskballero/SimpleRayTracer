@@ -25,7 +25,7 @@ const double infinity = std::numeric_limits<double>::infinity();
 const double pi = 3.1415926535897932385;
 
 // funciones de utilidad
-inline float degrees_to_radians(float degrees) {
+inline float degreesToRadians(float degrees) {
     return degrees * pi / 180;
 }
 
@@ -45,12 +45,6 @@ inline float clamp(float x, float min, float max) {
     if (x > max) return max;
     return x;
 }
-
-// headers comunes
-#include "ray.h"
-#include "vec3.h"
-#include "color.h"
-#include "camera.h"
 
 #endif
 

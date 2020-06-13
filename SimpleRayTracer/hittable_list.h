@@ -25,7 +25,7 @@ public:
     void clear();
     void add(shared_ptr<hittable> object);
 
-    virtual bool hit(const ray& r, float t_min, float t_max, hit_record& rec) const;
+    virtual bool hit(const ray& rayo, float t_min, float t_max, hit_record& rec) const;
 
 private:
     std::vector<shared_ptr<hittable>> objects;

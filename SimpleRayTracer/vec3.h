@@ -9,6 +9,8 @@
 #ifndef VEC3_H
 #define VEC3_H
 
+#include "rtweekend.h"
+
 #include <cmath>
 #include <iostream>
 
@@ -28,6 +30,14 @@ public:
     float getX() const;
     float getY() const;
     float getZ() const;
+        
+    inline static vec3 randomVector() {
+        return vec3(randomFloat(), randomFloat(), randomFloat());
+    }
+    
+    inline static vec3 randomVector(float min, float max) {
+        return vec3(randomFloat(min, max), randomFloat(min, max), randomFloat(min, max));
+    }
 
 private:
     float x;
@@ -87,5 +97,27 @@ inline vec3 unitVector(vec3 v) {
     return v / v.length();
 }
 
+inline vec3 randomInUnitSphere() {
+    while (true) {
+        vec3 rand = vec3::randomVector(-1, 1);
+        if (rand.lengthSquared() >= 1.0) continue;
+        return rand;
+    }
+}
+
+inline vec3 randomUnitVector() {
+    float a = randomFloat(0, 2 * pi);
+    float z = randomFloat(-1, 1);
+    float r = sqrt(1 - z * z);
+    return vec3(r*cos(a), r*sin(a), z);
+}
+
+inline vec3 randomInHemisphere(const vec3& normal) {
+    vec3 in_unit_sphere = randomInUnitSphere();
+    if (dot(in_unit_sphere, normal) > 0.0)
+        return in_unit_sphere;
+    else
+        return -in_unit_sphere;
+}
 #endif
 
