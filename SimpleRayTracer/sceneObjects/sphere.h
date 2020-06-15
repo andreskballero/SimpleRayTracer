@@ -15,7 +15,7 @@
 class sphere: public hittable {
 public:
     sphere() {}
-    sphere(point3 cen, double r) : center(cen), radius(r) {};
+    sphere(point3 cen, double r, shared_ptr<material> m) : center(cen), radius(r), mat(m) {};
 
     point3 getCenter() const;
     float getRadius() const;
@@ -25,6 +25,7 @@ public:
 private:
     point3 center;
     float radius;
+    shared_ptr<material> mat;
 };
 
 #endif

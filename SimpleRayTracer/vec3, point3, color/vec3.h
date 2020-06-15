@@ -20,7 +20,7 @@ public:
     vec3(float xn, float yn, float zn) : x(xn), y(yn), z(zn) {}
 
     vec3 operator- () const;
-    vec3& operator+= (const vec3 &v);
+    vec3& operator+= (const vec3& v);
     vec3& operator*= (const float m);
     vec3& operator/= (const float d);
 
@@ -119,5 +119,25 @@ inline vec3 randomInHemisphere(const vec3& normal) {
     else
         return -in_unit_sphere;
 }
+
+inline vec3 reflect(const vec3& v, const vec3& n) {
+    return v - 2 * dot(v, n) * n;
+}
+
+inline vec3 refract(const vec3& uv, const vec3& n, float etai_over_etat) {
+    float cos_theta = dot(-uv, n);
+    vec3 r_out_parallel = etai_over_etat * (uv + (cos_theta * n));
+    vec3 r_out_perp = -sqrt(1.0 - r_out_parallel.lengthSquared()) * n;
+    return r_out_parallel + r_out_perp;
+}
+
+inline vec3 randomInUnitDisk() {
+    while (true) {
+        vec3 p = vec3(randomFloat(-1, 1), randomFloat(-1, 1), 0.0);
+        if (p.lengthSquared() >= 1) continue;
+        return p;
+    }
+}
+
 #endif
 

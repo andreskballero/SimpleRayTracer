@@ -36,7 +36,7 @@ inline float randomFloat() {
 
     // devuelve un número random entre min y max
 inline float randomFloat(float min, float max) {
-    return min + (max-min)*randomFloat();
+    return min + (max - min) * randomFloat();
 }
 
     // abraza la x entre min y max

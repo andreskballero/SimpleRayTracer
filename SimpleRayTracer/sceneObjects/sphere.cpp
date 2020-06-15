@@ -34,6 +34,7 @@ bool sphere::hit(const ray& rayo, float t_min, float t_max, hit_record& rec) con
             rec.point= rayo.currentPoint(rec.t);
             vec3 outward_normal = (rec.point - center) / radius;
             rec.setFaceNormal(rayo, outward_normal);
+            rec.mat = mat;
             return true;
         }
         temp = (-half_b + root) / a;
@@ -42,6 +43,7 @@ bool sphere::hit(const ray& rayo, float t_min, float t_max, hit_record& rec) con
             rec.point = rayo.currentPoint(rec.t);
             vec3 outward_normal = (rec.point - center) / radius;
             rec.setFaceNormal(rayo, outward_normal);
+            rec.mat = mat;
             return true;
         }
     }

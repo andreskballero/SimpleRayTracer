@@ -11,6 +11,9 @@
 #include "hittable_list.h"
 #include "sphere.h"
 #include "camera.h"
+#include "lambertian.h"
+#include "metal.h"
+#include "dielectric.h"
 
 #include <cstdlib> // aquí están EXIT_SUCCESS y EXIT_ERROR
 #include <iostream>
@@ -24,8 +27,11 @@ color rayColor(const ray& rayo, const hittable& elements, int recursion_depth) {
         return color(0, 0, 0);
     
     if (elements.hit(rayo, 0.001, infinity, rec)) {
-        point3 target = rec.point + randomInHemisphere(rec.normal);
-        return 0.5 * rayColor(ray(rec.point, target - rec.point), elements, recursion_depth-1);
+        ray scattered;
+        color attenuation;
+        if (rec.mat->scatter(rayo, rec, attenuation, scattered))
+            return attenuation * rayColor(scattered, elements, recursion_depth-1);
+        return color(0, 0, 0);
     }
     
     vec3 unit_direction = unitVector(rayo.getDirection());
@@ -45,13 +51,28 @@ int main(int argc, const char *argv[]) {
     // concreta para que se pueda interpretar el .ppm
     std::cout << "P3\n" << screen_width << " " << screen_height << "\n255\n";
 
+    // R
+    float R = cos(pi / 4);
+    
     // lista de elementos de la escena
     hittable_list elements;
-    elements.add(make_shared<sphere>(point3(0,0,-1), 0.5));
-    elements.add(make_shared<sphere>(point3(0,-100.5,-1), 100));
+    elements.add(make_shared<sphere>(point3(0, 0, -1), 0.5, make_shared<lambertian>(color(0.1, 0.2, 0.5))));
+    elements.add(make_shared<sphere>(point3(0, -100.5, -1), 100, make_shared<lambertian>(color(0.8, 0.8, 0.0))));
+    
+    elements.add(make_shared<sphere>(point3(1, 0, -1), 0.5, make_shared<metal>(color(0.8, 0.6, 0.2), 0.3)));
+    
+    elements.add(make_shared<sphere>(point3(-1, 0, -1), 0.5, make_shared<dielectric>(1.5)));
+    elements.add(make_shared<sphere>(point3(-1, 0, -1), -0.45, make_shared<dielectric>(1.5)));
+
     
     // cámara
-    camera camara;
+    point3 lookfrom(3, 3, 2);
+    point3 lookat(0, 0, -1);
+    vec3 vup(0, 1, 0);
+    float dist_to_focus = (lookfrom - lookat).length();
+    float aperture = 0.0; // cuanto mayor sea la apertura, más luz entra en la cámara y mayor el defocus blur
+    
+    camera camara(lookfrom, lookat, vup, 30.0, aspect_ratio, aperture, dist_to_focus);
     
     // voy bajando, y
     for (int y = screen_height-1; y >= 0; --y) {
